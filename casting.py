@@ -8,6 +8,8 @@ def casting():
     descuento = input("ingrese descuento ")
     descuento_int = int(descuento)
     print(descuento)
+    cantidad = input("ingrese la cantidad de entradas que quiere ")
+    cantidad_int = int(cantidad)
     calcular_descuento = precio_int * (descuento_int / 100)
-    calcular_total = precio_int - calcular_descuento
+    calcular_total = (precio_int * cantidad_int)- calcular_descuento
     print("tu total es:", calcular_total)
