@@ -31,14 +31,14 @@ def ficha():
     #   - Cierre decorativo usando repetición de string ("=" * 24)
     pass
 
-    titulo = """=======================================
+    titulo = f"""{'='*24}
     FICHA DEL ALUMNO
-    ======================================="""
+{'='*24}"""
     print(titulo)
-    nombre= input("Nombre:").title()
-    print(nombre)
-    mail = input("mail: ").lower()
-    print(mail)
+    nombre= input().title().strip()
+    print("Nombre:",nombre)
+    mail = input().lower()
+    print("Email:",mail)
     nota1 = int(input("Nota 1: "))
     nota2 = int(input("Nota 2: "))
     nota3 = int(input("Nota 3: "))
@@ -46,20 +46,25 @@ def ficha():
     inicial_nombre = nombre[0]
     espacio = nombre.find(" ")
     ini_apellido = nombre[espacio + 1]
-    print("Iniciales:",inicial_nombre,ini_apellido)
-    usuario = print(f"Usuario:{nombre.lower()[0:espacio]}.{nombre.lower()[espacio+1:-1]}")
-    arroba = "@" in mail
-    print("Email valido:",arroba)
-    dominio = mail[arroba + 1 : -1]
+    print("Iniciales:",inicial_nombre + ini_apellido)
+    usuario = print(f"Usuario: {nombre.lower()[espacio+1:]}.{nombre.lower()[0:espacio]}")
+    esta_arroba = "@" in mail
+    print("Email valido:",esta_arroba)
+    arroba = mail.find("@")
+    dominio = mail[arroba + 1 :]
     print("Dominio:",dominio)
     print("Nombre para archivo:", nombre.replace(" ", "_"))
     print("Cantidad de a:",nombre.count('a'))
-    print("Codigo secreto: AICRAG AIRAM")
-    print("Nota1:",nota1)
-    print("Nota2:",nota2)
-    print("Nota3:",nota3)
+    print("Codigo secreto:", nombre[::-1].upper())
+    print("Nota 1:",nota1)
+    print("Nota 2:",nota2)
+    print("Nota 3:",nota3)
     suma = nota1 + nota2 + nota3
     print("Suma:",suma)
     promedio = suma / 3
-    print(promedio)
-    print(int(promedio))
+    print(f"Promedio: {promedio}")
+    print("Promedio entero:", int(promedio))
+    print(f"{'='*24}")
+
+
+
