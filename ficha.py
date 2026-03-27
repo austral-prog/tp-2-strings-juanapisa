@@ -1,3 +1,8 @@
+from idlelib.replace import replace
+from itertools import count
+from urllib.parse import uses_query
+
+
 def ficha():
     """Ejercicio integrador. Lee nombre, email y 3 notas, y genera una ficha
     de alumno aplicando: strip, title, lower, upper, int, len, find, slicing,
@@ -25,3 +30,36 @@ def ficha():
     #   - Las 3 notas, su suma, promedio y promedio entero
     #   - Cierre decorativo usando repetición de string ("=" * 24)
     pass
+
+    titulo = """=======================================
+    FICHA DEL ALUMNO
+    ======================================="""
+    print(titulo)
+    nombre= input("Nombre:").title()
+    print(nombre)
+    mail = input("mail: ").lower()
+    print(mail)
+    nota1 = int(input("Nota 1: "))
+    nota2 = int(input("Nota 2: "))
+    nota3 = int(input("Nota 3: "))
+    print("Caracteres en nombre:",len(nombre))
+    inicial_nombre = nombre[0]
+    espacio = nombre.find(" ")
+    ini_apellido = nombre[espacio + 1]
+    print("Iniciales:",inicial_nombre,ini_apellido)
+    usuario = print(f"Usuario:{nombre.lower()[0:espacio]}.{nombre.lower()[espacio+1:-1]}")
+    arroba = "@" in mail
+    print("Email valido:",arroba)
+    dominio = mail[arroba + 1 : -1]
+    print("Dominio:",dominio)
+    print("Nombre para archivo:", nombre.replace(" ", "_"))
+    print("Cantidad de a:",nombre.count('a'))
+    print("Codigo secreto: AICRAG AIRAM")
+    print("Nota1:",nota1)
+    print("Nota2:",nota2)
+    print("Nota3:",nota3)
+    suma = nota1 + nota2 + nota3
+    print("Suma:",suma)
+    promedio = suma / 3
+    print(promedio)
+    print(int(promedio))
