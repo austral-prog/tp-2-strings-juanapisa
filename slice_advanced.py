@@ -3,3 +3,7 @@ def slice_advanced():
     en adelante, tomando uno de cada dos (paso 2).
     """
     pass
+
+    frase = input("Ingrese un texto: ")
+    print(frase[4:])
+    print(frase[4::2])
