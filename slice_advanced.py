@@ -5,5 +5,5 @@ def slice_advanced():
     pass
 
     frase = input("Ingrese un texto: ")
-    print(frase[4:])
     print(frase[4::2])
+
